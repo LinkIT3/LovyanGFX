@@ -7,10 +7,10 @@
  */
 
 #if defined(__has_include)
-    #if __has_include("lvgl/lvgl.h")
-        #include "lvgl/lvgl.h"
-        #define M5GFX_USING_REAL_LVGL 1
-    #endif
+#if __has_include("lvgl/lvgl.h")
+#include "lvgl/lvgl.h"
+#define M5GFX_USING_REAL_LVGL 1
+#endif
 #endif
 
 #ifndef M5GFX_USING_REAL_LVGL
@@ -22,8 +22,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-
 
 /*Enable handling large font and/or fonts with a lot of characters.
  *The limit depends on the font size, font face and bpp.
@@ -43,10 +41,11 @@ extern "C" {
 #endif
 
 #ifndef LV_VERSION_CHECK
-#define LV_VERSION_CHECK(x, y, z) \
-    ((LVGL_VERSION_MAJOR > (x)) || \
-    ((LVGL_VERSION_MAJOR == (x)) && (LVGL_VERSION_MINOR > (y))) || \
-    ((LVGL_VERSION_MAJOR == (x)) && (LVGL_VERSION_MINOR == (y)) && (LVGL_VERSION_PATCH >= (z))))
+#define LV_VERSION_CHECK(x, y, z)                                   \
+    ((LVGL_VERSION_MAJOR > (x)) ||                                  \
+     ((LVGL_VERSION_MAJOR == (x)) && (LVGL_VERSION_MINOR > (y))) || \
+     ((LVGL_VERSION_MAJOR == (x)) && (LVGL_VERSION_MINOR == (y)) && \
+      (LVGL_VERSION_PATCH >= (z))))
 #endif
 
 #ifndef LV_ATTRIBUTE_LARGE_CONST
